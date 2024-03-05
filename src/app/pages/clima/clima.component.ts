@@ -1,45 +1,28 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ClimaService } from '../../services/clima.service';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-clima',
-  standalone: true,
-  imports: [CommonModule, FormsModule,], // Agregar CommonModule aquí
   templateUrl: './clima.component.html',
-  styleUrl: './clima.component.css'
-
+  styleUrls: ['./clima.component.css'],
+  standalone: true,
+  imports: [FormsModule,CommonModule],
 })
+export class ClimaComponent  {
 
-export class ClimaComponent {
-  urlBase = 'https://api.openweathermap.org/data/2.5/weather';
-  api_key = '605507acf87117e111e54a3ab5238541';
-  difKelvin:number = 273.15;
-  datosClima: any = {};
-  ciudad: string = ''; // Definición de la propiedad ciudad
+  ciudad: string = '';
+  private _climaService = inject(ClimaService);
+  datosClima:any;
 
-  constructor() { }
-  buscarClima(ciudad: string) {
-    if (ciudad) {
-      this.fetchDatosClima(ciudad);
-    }
+  buscarCiudad() {
+    this._climaService.buscarClima(this.ciudad).subscribe(
+      (data) => {
+        this.datosClima = this._climaService.procesarDatosClima(data);
+      });
   }
-
-  fetchDatosClima(ciudad: string) {
-    fetch(`${this.urlBase}?q=${ciudad}&appid=${this.api_key}`)
-      .then(data => data.json())
-      .then(data => this.mostrarDatosClima(data));
-  }
-
-  mostrarDatosClima(data: any) {
-    this.datosClima = {
-      ciudadNombre: data.name,
-      paisNombre: data.sys.country,
-      temperatura: Math.floor(data.main.temp - this.difKelvin),
-      humedad: data.main.humidity,
-      descripcion: data.weather[0].description,
-      icono: `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
-    };
-  }
+ 
+  
 }
