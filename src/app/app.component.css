@@ -4,13 +4,18 @@
     display: grid;
     /* orden que aparecen los elementos */
     grid-template-areas:
-      "header header"
-      "content content"
-      "footer footer";
+      "header"
+      "content"
+      "footer";
+    grid-template-columns: 1fr;
   }
   
   .content {
-      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100%;
       grid-area: content;
   }
   
