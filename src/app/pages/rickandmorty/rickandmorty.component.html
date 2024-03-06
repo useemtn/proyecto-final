@@ -1,1 +1,9 @@
-<p>rickandmorty works!</p>
+@for (character of characters; track character) {
+  <div class="contenido-rick">
+    <div class="character-card">
+      <img [src]="character.image" alt="{{character.name}}">
+      <h2>{{character.name}}</h2>
+      <p>{{character.species}}</p>
+    </div>
+  </div>
+}

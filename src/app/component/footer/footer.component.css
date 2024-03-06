@@ -1,8 +1,6 @@
 :host{
     display: block;
     grid-area: footer;
-    position: absolute;
     width: 100%;
-    bottom: 0;
   }
   
