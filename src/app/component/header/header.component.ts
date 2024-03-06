@@ -16,6 +16,7 @@ export class HeaderComponent {
     { name: 'GitHub', routerLink: '/github' },
     { name: 'Rick and Morty', routerLink: '/rickandmorty' },
     { name: 'Adivinanza', routerLink: '/adivinanza' },
+    { name: 'Calculadora', routerLink: '/calculator'},
   ];
 
   constructor(private router: Router) {}
