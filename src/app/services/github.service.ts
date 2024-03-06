@@ -1,31 +1,24 @@
-import { Injectable } from '@angular/core';
-import { Http, Headers } from '@angular/http';
-import 'rxjs/add/operator/map';
-
-@Injectable()
-export class ProfileService {
-
-  private username:string;
-  private clientid = 'f3571d8e55e169540825';
-  private clientsecret = 'a6c2b7d8f7c691e771b1908873e1322028e097c4';
-
-  constructor(private http:Http) { 
-  	console.log("service is now ready!");
-  	this.username = 'kirandash';
+import { Injectable, inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+@Injectable({
+  providedIn: 'root'
+})
+export class GithubService {
+  private _http = inject(HttpClient);
+  private urlBase = 'https://api.github.com/users';
+  buscarUsuario(username: string): Observable<any> {
+    return this._http.get(`${this.urlBase}/${username}`);
   }
-
-  getProfileInfo(){
-  	return this.http.get("https://api.github.com/users/" + this.username + "?client_id=" + this.clientid + "&client_secret=" + this.clientsecret)
-  	.map(res => res.json());
+  procesarDatosGithub(data: any): any {
+    return {
+      nombre: data.login,
+      img: data.avatar_url,
+      followers: data.followers,
+      following: data.following,
+      admin: data.site_admin,
+      enlace: data.html_url
+    }
   }
-
-  getProfileRepos(){
-  	return this.http.get("https://api.github.com/users/" + this.username + "/repos?client_id=" + this.clientid + "&client_secret=" + this.clientsecret)
-  	.map(res => res.json());
-  }
-
-  updateProfile(username:string){
-  	this.username = username;
-  }
-
+  constructor() { }
 }
