@@ -3,6 +3,8 @@ import { ClimaComponent } from './pages/clima/clima.component';
 import { HomeComponent } from './pages/home/home.component';
 import { GithubComponent } from './pages/github/github.component';
 import { RickandmortyComponent } from './pages/rickandmorty/rickandmorty.component';
+import { AdivinanzaComponent } from './pages/adivinanza/adivinanza.component';
+
 
 export const routes: Routes = [
 
@@ -10,6 +12,7 @@ export const routes: Routes = [
 {path: 'clima', component:ClimaComponent, title: 'Clima'},
 {path: 'github', component:GithubComponent, title: 'Github'},
 {path: 'rickandmorty', component:RickandmortyComponent, title: 'Rick And Morty'},
+{path: 'adivinanza', component:AdivinanzaComponent, title: 'Adivinanza'},
 
 {path: '**',redirectTo: '',pathMatch:'full' },
 
