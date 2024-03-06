@@ -15,15 +15,16 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" routerLink="/clima">Clima</a></li>
-            <li><a class="dropdown-item" href="#">Api 2</a></li>
-            <li><a class="dropdown-item" href="#">Api 3</a></li>
+            <li><a class="dropdown-item" routerLink="/github">GitHub</a></li>
+            <li><a class="dropdown-item" routerLink="/rickandmorty">Rick and Morty</a></li>
+            <li><a class="dropdown-item" routerLink="/adivinanza">Adivinanza</a></li>
           </ul>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      <div class="d-flex">
+        <input class="form-control me-2" [(ngModel)]="search" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="button" (click)="onSearch()">Search</button>
+      </div>
     </div>
   </div>
 </nav>

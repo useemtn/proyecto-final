@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 })
 export class GithubService {
   private _http = inject(HttpClient);
-  private urlBase = 'https://api.github.com/users';
+  private urlBase:string = 'https://api.github.com/users';
   buscarUsuario(username: string): Observable<any> {
     return this._http.get(`${this.urlBase}/${username}`);
   }

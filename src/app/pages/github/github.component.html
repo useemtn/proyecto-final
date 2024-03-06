@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="mb-3 d-flex gap-3">
+        <input type="text" class="form-control" placeholder="Usuario de GitHub" [(ngModel)]="githubUser">
+        <button type="submit" class="btn btn-primary" (click)="getUser()"><i
+                class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+    @if (btnClick) {
+    <div class="card shadow-sm" style="width: 18rem;">
+        <img [src]="datosGithub.img" alt="Imagen de perfil de GitHub" class="card-img-top img-fluid rounded">
+        <div class="card-body">
+            <h5 class="card-title">{{ datosGithub.nombre }}</h5>
+            @if (datosGithub.admin) {
+                <p class="card-text text-success">Admin</p>
+            }
+            <p class="card-text"><strong>Seguidores:</strong> {{ datosGithub.followers }}</p>
+            <p class="card-text"><strong>Siguiendo:</strong> {{ datosGithub.following }}</p>
+            <a [href]="datosGithub.enlace" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Ir a
+                GitHub</a>
+        </div>
+    </div>
+    }
+
+</div>
