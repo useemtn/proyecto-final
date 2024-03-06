@@ -6,10 +6,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RickandmortyService {
 
+  private url:string = 'https://rickandmortyapi.com/api/'
   constructor(private http: HttpClient) { }
 
   get() {
-    return this.http.get('https://rickandmortyapi.com/api/');
+    return this.http.get(this.url + 'character');
   }
   getByUrl(url: string) {
     return this.http.get(url);
