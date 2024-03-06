@@ -1,34 +1,27 @@
-import { Component, OnInit } from '@angular/core';
-import { ProfileService } from '../../services/profile.service';
-
+// app.component.ts
+import { Component, inject } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { GithubService } from '../../services/github.service';
 @Component({
-  selector: 'gg-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  selector: 'app-root',
+  standalone: true,
+  imports : [
+    FormsModule
+  ],
+  templateUrl: './github.component.html',
+  styleUrls: ['./github.component.css']
 })
-export class ProfileComponent implements OnInit {
-  profile:any[];
-  repos: any[];
-  username:string;
-
-  constructor(private profileService: ProfileService) { 
-
+export class GithubComponent {
+  btnClick: boolean = false;
+  githubUser = '';
+  private __githubService = inject(GithubService);
+  datosGithub: any;
+  getUser(){
+    this.btnClick = true;
+    this.__githubService.buscarUsuario(this.githubUser).subscribe(
+      (data) => {
+        this.datosGithub = this.__githubService.procesarDatosGithub(data);
+      }
+    )
   }
-
-  findProfile(){
-  	this.profileService.updateProfile(this.username);
-  	this.profileService.getProfileInfo().subscribe(profile => {
-  		console.log(profile);
-  		this.profile = profile;
-  	});
-
-  	this.profileService.getProfileRepos().subscribe(repos => {
-  		console.log(repos);
-  		this.repos = repos;
-  	})  	
-  }
-
-  ngOnInit() {
-  }
-
 }
