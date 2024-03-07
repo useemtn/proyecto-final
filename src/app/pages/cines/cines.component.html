@@ -1,0 +1,14 @@
+<h1>Mi Lista de Cines</h1>
+
+<ul>
+  <li *ngFor="let cine of cines">
+    {{ cine.nombre }} - {{ cine.ciudad }}
+    <button (click)="eliminarCine(cine.id)">Eliminar</button>
+  </li>
+</ul>
+
+<form (submit)="agregarCine()">
+  <input type="text" [(ngModel)]="nuevoCine.nombre" placeholder="Nombre del cine">
+  <input type="text" [(ngModel)]="nuevoCine.ciudad" placeholder="Ciudad">
+  <button type="submit">Agregar Cine</button>
+</form>
