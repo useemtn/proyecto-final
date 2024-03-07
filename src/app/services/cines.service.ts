@@ -3,22 +3,22 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class CinesService {
-  private apiUrl = 'http://localhost:3000'; // Cambia esto según la URL de tu servidor
+export class CineService {
+  private apiUrl = 'http://localhost:3000';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  getCines(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/cines`);
+  getCines(page: number, perPage: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}/cines?page=${page}&perPage=${perPage}`);
   }
 
   addCine(cine: any): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/cines`, cine);
+    return this.http.post(`${this.apiUrl}/cines`, cine);
   }
 
-  deleteCine(id: string): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/cines/${id}`);
+  deleteCine(id: number): Observable<any> {
+    return this.http.delete<null>(`${this.apiUrl}/cines/${id}`);
   }
 }

@@ -5,6 +5,7 @@ import { GithubComponent } from './pages/github/github.component';
 import { RickandmortyComponent } from './pages/rickandmorty/rickandmorty.component';
 import { AdivinanzaComponent } from './pages/adivinanza/adivinanza.component';
 import { CalculatorComponent } from './pages/calculator/calculator.component';
+import { CinesComponent } from './pages/cines/cines.component';
 
 
 export const routes: Routes = [
@@ -15,6 +16,7 @@ export const routes: Routes = [
 {path: 'rickandmorty', component:RickandmortyComponent, title: 'Rick And Morty'},
 {path: 'adivinanza', component:AdivinanzaComponent, title: 'Adivinanza'},
 {path: 'calculator', component:CalculatorComponent, title: 'Calculadora'},
+{path: 'cines', component:CinesComponent, title: 'Cines'},
 
 {path: '**',redirectTo: '',pathMatch:'full' },
 

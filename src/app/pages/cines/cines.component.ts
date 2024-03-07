@@ -1,18 +1,26 @@
-// src/app/mi-componente.component.ts
-
 import { Component, OnInit } from '@angular/core';
-import { CinesService } from '../../services/cines.service';
+import { CineService } from '../../services/cines.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-mi-componente',
-  templateUrl: './mi-componente.component.html',
+  selector: 'app-cines',
+  standalone: true,
+  imports: [ FormsModule],
+  templateUrl: './cines.component.html',
+  styleUrls: ['./cines.component.css']
 })
-export class MiComponenteComponent implements OnInit {
-  constructor(private cinesService: CinesService) {}
+export class CinesComponent implements OnInit {
+  cines : any[] = [];
+  constructor (private cineService: CineService) { }
 
   ngOnInit(): void {
-    this.cinesService.getCines().subscribe((cines) => {
-      console.log('Lista de cines:', cines);
-    });
+    this.cineService.getCines(0,100).subscribe(
+      data => {
+        this.cines = data.cines;
+      }
+    )
+  }
+  deleteCine(id: number){
+    alert(id);
   }
 }
