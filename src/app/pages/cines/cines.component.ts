@@ -12,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 export class CinesComponent implements OnInit {
   cines : any[] = [];
   constructor (private cineService: CineService) { }
+  nombre: string = ''
+  direccion: string = ''
 
   ngOnInit(): void {
     this.cineService.getCines(0,100).subscribe(
@@ -21,6 +23,19 @@ export class CinesComponent implements OnInit {
     )
   }
   deleteCine(id: number){
-    alert(id);
+    this.cineService.deleteCine(id).subscribe(
+      () => {
+        this.cines = this.cines.filter(cine => cine.id !== id);
+      }
+    )
+  }
+  addCine() {
+    this.cineService.addCine({ nombre : this.nombre , direccion : this.direccion }).subscribe(
+      cine => {
+        this.cines.push(cine);
+        this.nombre = '';
+        this.direccion = '';
+      }
+    )
   }
 }
