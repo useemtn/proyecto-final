@@ -1,0 +1,30 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cuadricula {
+    background-color: blueviolet;
+    color: white;
+    width: 39vw;
+    height: 39vw;
+    margin-top: 2%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+    padding: 0;
+}
+
+.celda {
+    width: 13vw;
+    height: 13vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.celda img {
+    width: 60%;
+}
