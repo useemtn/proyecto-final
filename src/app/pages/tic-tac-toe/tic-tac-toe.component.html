@@ -1,7 +1,15 @@
 <div class="cuadricula">
-    <div class="celda" *ngFor="let celda of celdas; let i = index" (click)="celdaClick(i)">
-        <img *ngIf="celda === 1" src="images/equis.png" alt="equis">
-        <img *ngIf="celda === 2" src="images/circulo.png" alt="circulo">
-        <span *ngIf="celda === 0">{{i + 1}}</span>
+  @for (celda of celdas; track celda; let i = $index) {
+    <div class="celda" (click)="celdaClick(i)">
+      @if (celda === 1) {
+        <img src="../../../assets/red_cross.png" alt="equis" height="100" width="75">
+      }
+      @if (celda === 2) {
+        <img src="../../../assets/green_circle.png" alt="circulo" height="100" width="75">
+      }
+      @if (celda === 0) {
+        <span>{{i + 1}}</span>
+      }
     </div>
+  }
 </div>
