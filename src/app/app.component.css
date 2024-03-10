@@ -1,21 +1,21 @@
 :host {
-    margin: 0;
-    gap: 1rem;
-    display: grid;
-    /* orden que aparecen los elementos */
-    grid-template-areas:
-      "header"
-      "content"
-      "footer";
-    grid-template-columns: 1fr;
-  }
-  
-  .content {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      height: 100%;
-      grid-area: content;
-  }
-  
+  margin: 0;
+  display: grid;
+  grid-template-areas:
+    "header"
+    "content"
+    "footer";
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+.content {
+  display: grid;
+  place-content: center;
+  grid-area: content;
+}
+
+footer {
+  grid-area: footer;
+  width: 100vw;
+}

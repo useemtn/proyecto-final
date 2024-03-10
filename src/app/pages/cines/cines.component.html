@@ -1,5 +1,5 @@
 @if (cines) {
-  <div>
+  <div class="contenedor">
     <h2>Lista de Cines</h2>
     <ul>
       @for (cine of cines; track cine.nombre){
@@ -14,10 +14,9 @@
   </div>
 }
 <div class="form-group">
-  <label for="nombre">Nombre:</label>
-  <input id="nombre" [(ngModel)]="nombre" name="nombre" required>
-
-  <label for="direccion">Dirección:</label>
-  <input id="direccion" [(ngModel)]="direccion" name="direccion" required>
+  <input id="nombre" [(ngModel)]="nombre" name="nombre" required placeholder="Nombre">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input id="direccion" [(ngModel)]="direccion" name="direccion" required placeholder="Dirección">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <button type="button" (click)="addCine()" class="btn btn-success"><i class="fa-solid fa-plus"></i></button>
 </div>

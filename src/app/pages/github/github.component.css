@@ -1,0 +1,16 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 87.5vh;
+    background: linear-gradient(90deg, rgba(64,222,255,1) 7%, rgba(0,146,255,1) 100%);
+}
+button {
+    background-color: blueviolet;
+    border: 1px solid black;
+}&:hover {
+    background-color: blueviolet;
+    scale: 1.1;
+}
