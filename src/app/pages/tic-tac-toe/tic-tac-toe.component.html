@@ -1,15 +1,29 @@
-<div class="cuadricula">
-  @for (celda of celdas; track celda; let i = $index) {
-    <div class="celda" (click)="celdaClick(i)">
-      @if (celda === 1) {
-        <img src="../../../assets/red_cross.png" alt="equis" height="100" width="75">
+<div class="game-tic">
+
+  <article class="container-cell">
+    @for (row of board; track row) {
+      <div>
+        @for (cell of row; track cell) {
+          <button class="btn-lg fichas"
+            [ngClass]="cell.value"
+            [disabled]="isTaken(cell) || winner"
+            (click)="move(cell)"
+            >{{ cell.value }}
+          </button>
+        }
+      </div>
+    }
+    <p>
+      @if (!winner && !cat) {
+        <span>Current Player: {{ currentPlayer }}</span>
       }
-      @if (celda === 2) {
-        <img src="../../../assets/green_circle.png" alt="circulo" height="100" width="75">
+      @if (winner) {
+        <span>Player {{ currentPlayer }} has won!</span>
       }
-      @if (celda === 0) {
-        <span>{{i + 1}}</span>
+      @if (cat) {
+        <span>Cat</span>
       }
-    </div>
-  }
+    </p>
+    <button class="btn btn-primary btn-large new-game" (click)="reset()">New Game</button>
+  </article>
 </div>

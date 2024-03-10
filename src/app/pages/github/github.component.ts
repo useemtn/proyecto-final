@@ -1,4 +1,3 @@
-// app.component.ts
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { GithubService } from '../../services/github.service';

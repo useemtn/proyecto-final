@@ -1,17 +1,22 @@
 :host {
   background-color: #fff;
-  border: 1px solid #ddd;
+  border: 1px solid black;
+  margin: 20px;
   padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 119px 7px rgba(0,0,0,0.75);
+  border-radius: 50px;
 }
-
-.mi-componente h2 {
-  font-size: 24px;
+.contenedor h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
   color: #007bff;
 }
 
-.mi-componente button {
+.contenedor button {
   background-color: #007bff;
+  border-radius: 10px;
   color: #fff;
   border: none;
   padding: 10px 20px;
