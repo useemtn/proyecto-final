@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BlobOptions } from 'buffer';
 
 @Component({
   selector: 'calculator-root',
@@ -7,14 +8,14 @@ import { Component } from '@angular/core';
 })
 export class CalculatorComponent {
 
-  subText = '';
-  mainText = '';
+  subText:string = '';
+  mainText:string = '';
   operand1: number = 0;
   operand2: number = 0;
-  operator = '';
-  calculationString = '';
-  answered = false;
-  operatorSet = false;
+  operator:string = '';
+  calculationString:string = '';
+  answered:boolean = false;
+  operatorSet:boolean = false;
 
   pressKey(key: string) {
     if (key === '/' || key === 'x' || key === '-' || key === '+') {

@@ -12,7 +12,7 @@ import { GithubService } from '../../services/github.service';
 })
 export class GithubComponent {
   btnClick: boolean = false;
-  githubUser = '';
+  githubUser:string = '';
   private __githubService = inject(GithubService);
   datosGithub: any;
   getUser(){

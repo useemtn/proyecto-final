@@ -28,7 +28,6 @@ export class HeaderComponent {
     if (component) {
       this.router.navigate([component.routerLink]);
     } else {
-      // handle the case when the search does not match any component
     }
   }
 }

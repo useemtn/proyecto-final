@@ -15,5 +15,5 @@ import { FooterComponent } from './component/footer/footer.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'proyecto-final';
+  title:string = 'proyecto-final';
 }

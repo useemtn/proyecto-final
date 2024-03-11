@@ -9,15 +9,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./tic-tac-toe.component.css']
 })
 export class TicTacToeComponent {
-  emptyCell = '?';
+  emptyCell:string = '?';
   board = [
     [ { value: this.emptyCell }, { value: this.emptyCell }, { value: this.emptyCell } ],
     [ { value: this.emptyCell }, { value: this.emptyCell }, { value: this.emptyCell } ],
     [ { value: this.emptyCell }, { value: this.emptyCell }, { value: this.emptyCell } ]
   ];
-  currentPlayer = 'X';
-  winner = false;
-  cat = false;
+  currentPlayer:string = 'X';
+  winner:boolean = false;
+  cat:boolean = false;
 
   constructor() {
     this.reset();

@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './adivinanza.component.css'
 })
 export class AdivinanzaComponent {
-  numeroAzar = Math.floor(Math.random() * 100 + 1);
+  numeroAzar:number = Math.floor(Math.random() * 100 + 1);
   numeroEntrada: number = 0;
   mensaje:string = '';
   intentos:number= 5;
