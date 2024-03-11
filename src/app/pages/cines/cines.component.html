@@ -1,11 +1,15 @@
+<!-- Compruebo que hay cines -->
 @if (cines) {
   <div class="contenedor">
     <h2>Lista de Cines</h2>
     <ul>
+      <!-- Recorro el array de cines -->
       @for (cine of cines; track cine.nombre){
         <li>
           <p></p>
+          <!-- Imprimo el nombre del cine -->
           <h3>{{ cine.nombre }}</h3>
+          <!-- Imprimo la dirección del cine -->
           <p>{{ cine.direccion }}</p>
           <button (click)="deleteCine(cine.id)">Borrar</button>
         </li>
@@ -13,6 +17,7 @@
     </ul>
   </div>
 }
+<!-- Formulario para anadir un cine -->
 <div class="form-group">
   <input id="nombre" [(ngModel)]="nombre" name="nombre" required placeholder="Nombre">
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

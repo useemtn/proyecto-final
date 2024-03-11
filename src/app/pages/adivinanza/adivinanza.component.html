@@ -1,6 +1,8 @@
 <h1>Adivina el número</h1>
 <p>Introduce un número entre 1 y 100:</p>
+<!-- Recoge el valor introducido por el usuario -->
 <input type="number" [(ngModel)]="numeroEntrada">
+<!-- Ejecuta la función comprobar al pulsar el botón -->
 <button (click)="comprobar()">Comprobar</button>
 
 <p>{{ mensaje }}</p>

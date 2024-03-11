@@ -4,8 +4,10 @@
         <button type="submit" class="btn btn-primary" (click)="getUser()"><i
                 class="fa-solid fa-magnifying-glass"></i></button>
     </div>
+    <!-- Compruebo que hay datos -->
     @if (btnClick) {
     <div class="card shadow-sm" style="width: 18rem;">
+        <!-- Datos usuario -->
         <img [src]="datosGithub.img" alt="Imagen de perfil de GitHub" class="card-img-top img-fluid rounded">
         <div class="card-body">
             <h5 class="card-title">{{ datosGithub.nombre }}</h5>

@@ -1,3 +1,4 @@
+// Importo los componentes necesarios
 import { RouterOutlet, Routes } from '@angular/router';
 import { ClimaComponent } from './pages/clima/clima.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -8,7 +9,7 @@ import { CalculatorComponent } from './pages/calculator/calculator.component';
 import { CinesComponent } from './pages/cines/cines.component';
 import { TicTacToeComponent } from './pages/tic-tac-toe/tic-tac-toe.component';
 
-
+// Defino las rutas
 export const routes: Routes = [
 
 {path: '', component:HomeComponent, title: 'Inicio'},

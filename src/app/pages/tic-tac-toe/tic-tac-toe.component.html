@@ -1,29 +1,31 @@
 <div class="game-tic">
 
   <article class="container-cell">
+    <!-- Recorro el array de filas -->
     @for (row of board; track row) {
-      <div>
-        @for (cell of row; track cell) {
-          <button class="btn-lg fichas"
-            [ngClass]="cell.value"
-            [disabled]="isTaken(cell) || winner"
-            (click)="move(cell)"
-            >{{ cell.value }}
-          </button>
-        }
-      </div>
+    <div>
+      <!-- Recorro el array de celdas y formará el "tablero" -->
+      @for (cell of row; track cell) {
+      <!-- Imprimo la celda -->
+      <button class="btn-lg fichas" [ngClass]="cell.value" [disabled]="isTaken(cell) || winner" (click)="move(cell)">{{
+        cell.value }}
+      </button>
+      }
+    </div>
     }
     <p>
+      <!-- Imprimo el ganador -->
       @if (!winner && !cat) {
-        <span>Current Player: {{ currentPlayer }}</span>
+      <span>Current Player: {{ currentPlayer }}</span>
       }
       @if (winner) {
-        <span>Player {{ currentPlayer }} has won!</span>
+      <span>Player {{ currentPlayer }} has won!</span>
       }
       @if (cat) {
-        <span>Cat</span>
+      <span>Cat</span>
       }
     </p>
+    <!-- Botón para reiniciar el juego -->
     <button class="btn btn-primary btn-large new-game" (click)="reset()">New Game</button>
   </article>
 </div>

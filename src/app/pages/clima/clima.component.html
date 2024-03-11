@@ -1,9 +1,13 @@
 <div class="contenedor">
     <h1>Aplicación de Clima</h1>
+    <!-- Recoge el valor introducido por el usuario -->
     <input type="text" [(ngModel)]="ciudad" placeholder="Ingrese una ciudad" aria-label="Ingrese una ciudad">
+    <!-- Ejecuta la función buscarClima al pulsar el botón -->
     <button (click)="buscarCiudad()" id="botonBusqueda">Buscar</button>
+    <!-- Comprueba si existe el objeto datosClima -->
     @if (datosClima.ciudadNombre) {
       <div id="datosClima">
+        <!-- Muestra los datos del objeto datosClima -->
         <h2>{{ datosClima.ciudadNombre }}, {{ datosClima.paisNombre }}</h2>
         <p>La temperatura es: {{ datosClima.temperatura }}ºC</p>
         <p>La humedad es: {{ datosClima.humedad }}%</p>

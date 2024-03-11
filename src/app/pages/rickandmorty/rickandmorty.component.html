@@ -1,8 +1,12 @@
+<!-- Recorro el array de personajes -->
 @for (character of characters; track character) {
   <div class="contenido-rick">
     <div class="character-card">
+      <!-- Imprimo la imagen del personaje -->
       <img [src]="character.image" alt="{{character.name}}">
+      <!-- Imprimo el nombre del personaje -->
       <h2>{{character.name}}</h2>
+      <!-- Imprimo la especie del personaje -->
       <p>{{character.species}}</p>
     </div>
   </div>
