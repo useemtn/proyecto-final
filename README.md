@@ -12,7 +12,7 @@ Bootstrap
 
 ## Requisitos:
 Node.js v16+\
-npm v7+\
+npm v7+
 
 
 ## Clonar el repositorio:
