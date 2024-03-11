@@ -2,26 +2,28 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.
 
-## Development server
+Descripción: Este proyecto es una aplicación web de gestión de tareas desarrollado con Angular 17.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Tecnologías:
 
-## Code scaffolding
+Angular 17
+TypeScript
+Bootstrap
+Requisitos:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Node.js v16+
+npm v7+
+Instalación:
 
-## Build
+Clonar el repositorio:
+git clone https://github.com/KaZZuSe/proyecto-final.git
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Instalar la consola de angular (en caso de no tenerla):
+npm install -g @angular/cli
 
-## Running unit tests
+Instalar las dependencias:
+npm install
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Iniciar el servidor de desarrollo:
+npm start
