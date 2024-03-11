@@ -16,8 +16,8 @@
 .maindisplay {
     background: lightgrey;
     height: 25vh;
-    padding: 5% !important;
-    font-size: 4rem;
+    padding: 2% !important; /* Ajusta el padding */
+    font-size: 3rem; /* Reduce el tamaño de fuente */
     text-align: right;
     font-family: Courier, monospace;
     overflow: auto;
@@ -25,8 +25,8 @@
 
 .subdisplay {
     border-bottom: 1px solid black;
-    height: 25%;
-    font-size: 2rem;
+    height: 20%; /* Reduce la altura */
+    font-size: 1.5rem; /* Reduce el tamaño de fuente */
     overflow: auto;
 }
 
@@ -36,11 +36,11 @@
 
 .keys {
     margin: 0;
-    height: 20%;
+    height: 15%; /* Reduce la altura */
     background: whitesmoke;
     color: black;
-    padding: 5%;
-    font-size: 2rem;
+    padding: 3%; /* Ajusta el padding */
+    font-size: 1.5rem; /* Reduce el tamaño de fuente */
     text-align: center;
     cursor: pointer;
     opacity: 0.9;
@@ -68,4 +68,17 @@
 .opkey {
     color: white;
     background-color: black; 
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 600px) {
+    .maindisplay {
+        font-size: 2rem; /* Ajusta el tamaño de fuente */
+    }
+    .subdisplay {
+        font-size: 1rem; /* Ajusta el tamaño de fuente */
+    }
+    .keys {
+        font-size: 1rem; /* Ajusta el tamaño de fuente */
+    }
 }
