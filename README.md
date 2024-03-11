@@ -1,6 +1,6 @@
 # ProyectoFinal
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.
+Este proyecto ha sido generado con [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.
 
 Descripción: Este proyecto es un proyecto usando la recnología Angular 17.
 
