@@ -1,8 +1,9 @@
 # ProyectoFinal
 
-Este proyecto ha sido generado con [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.
+Este proyecto es el último poryecto de un módulo en mi etapa de estudiante. Realizo ditintas tareas en el mismo probando angular.
 
-Descripción: Este proyecto es un proyecto usando la recnología Angular 17.
+## Descripción
+Este proyecto es un proyecto usando la recnología Angular 17, se realizan distintas tareas como consumo de ditintas APIs para probar el framework.
 
 ## Tecnologías:
 
